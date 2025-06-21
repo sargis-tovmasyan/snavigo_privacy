@@ -18,15 +18,26 @@
     a {
       color: #007acc;
       text-decoration: none;
-    }
-    a:hover {
+    }    a:hover {
       text-decoration: underline;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }    .logo {
+      width: 48px;
+      height: 48px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Snavigo</h1>
+  <div class="header">
+    <img src="snavigo_icon_128x128.png" alt="Snavigo Logo" class="logo">
+    <h1>Snavigo</h1>
+  </div>
   <div id="content">Loading...</div>
 
   <!-- Marked.js for Markdown parsing -->
