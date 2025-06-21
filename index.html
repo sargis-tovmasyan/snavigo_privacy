@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snavigo – Privacy Policy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Privacy Policy</h1>
+  <div id="content">Loading...</div>
+
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    // Load the Markdown file and render it
+    fetch('privacy-policy.md')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to load privacy-policy.md');
+        }
+        return response.text();
+      })
+      .then(markdown => {
+        const html = marked.parse(markdown);
+        document.getElementById('content').innerHTML = html;
+      })
+      .catch(error => {
+        document.getElementById('content').innerHTML = '<p>Error loading content.</p>';
+        console.error(error);
+      });
+  </script>
+
+</body>
+</html>
